@@ -16,17 +16,36 @@ import ReactDOM from "react-dom/client";
 //   return fruit[Math.floor(Math.random() * fruit.length)];
 // }
 
-function TodoList({ items }) {
-  return <ul></ul>;
+function TodoList(props) {
+  // console.log(props);
+  // let items = [];
+
+
+  return( <ul style = {{color :props.color}}>
+    {props.items.map((str) => (
+    
+    <li>{str}</li>
+    
+    
+    ))}
+  
+
+
+  </ul>
+  );
 }
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([
+    "Chips",
+    "Candy",
+    "Coke"
+  ]);
 
   return (
     <div>
-      <TodoList items={items} />
-      <button onClick={() => {}}>Click me</button>
+      <TodoList items={items} color = "pink" />
+      <button onClick={() => setItems(items.concat(["candy"]))}>Click me</button>
     </div>
   );
 }
