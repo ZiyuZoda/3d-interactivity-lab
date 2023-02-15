@@ -5,7 +5,11 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <div 
+    // class={"current-count-" + 2 * count}    
+    style={{color: count <10 ?"red" : "blue"}}
+    
+    >
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
